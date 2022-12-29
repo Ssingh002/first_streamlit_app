@@ -24,8 +24,13 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 #Important: Fruit name needs to be spelled the same as the dataframe. Error otherwise
 
 fruits_selected = streamlit.multiselect ("Pick some fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
+#Use Variable to store saved fruit
 fruits_to_show = my_fruit_list.loc[fruits_selected]
+# variable will pull the details of the selected fruit
 streamlit.dataframe(fruits_to_show)
+# Display the fruit details. Additiona fruit can be added as well.
+streamlit.dataframe(fruits_selected)
+
 
 streamlit.dataframe(my_fruit_list)   
 # display dataframe

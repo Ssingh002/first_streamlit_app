@@ -35,7 +35,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 import requests
 #imports results into variable
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + " kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 
 #The following dumps the information of the Watermelon in a straighline
 streamlit.text(fruityvice_response.json())

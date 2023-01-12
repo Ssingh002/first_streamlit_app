@@ -33,10 +33,15 @@ streamlit.dataframe(fruits_to_show)
 #Lesson 9
 streamlit.header("Fruityvice Fruit Advice!")  
 import requests
+#imports results into variable
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+#The following dumps the information of the Watermelon in a straighline
 streamlit.text(fruityvice_response.json())
+#rturns dump: { "genus": "Citrullus", "name": "Watermelon", "id": 25, "family": "Cucurbitaceae", "order": "Cucurbitales", "nutritions": { "carbohydrates": 8, "protein": 0.6, "fat": 0.2, "calories": 30, "sugar": 6 } }
 
-# write your own comment -what does the next line do? 
+
+# Normalizes the above data in columns and values
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - what does this do?
-#streamlit.dataframe(fruityvice_normalized)
+# dumps the variable
+streamlit.dataframe(fruityvice_normalized)
+streamlit.dataframe(fruits_to_show)

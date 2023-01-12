@@ -44,4 +44,4 @@ streamlit.text(fruityvice_response.json())
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # dumps the variable
 streamlit.dataframe(fruityvice_normalized)
-streamlit.dataframe(fruits_to_show)
+

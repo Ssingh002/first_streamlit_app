@@ -29,9 +29,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # variable will pull the details of the selected fruit from dataframe
 # .loc gives rows by label
 streamlit.dataframe(fruits_to_show)
-# Display the fruit details. Additiona fruit can be added as well
 
-
-
-#streamlit.dataframe(my_fruit_list)   
-# display dataframe
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)

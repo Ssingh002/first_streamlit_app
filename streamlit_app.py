@@ -38,7 +38,7 @@ import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 
 #The following dumps the information of the Watermelon in a straighline
-streamlit.text(fruityvice_response.json())
+#streamlit.text(fruityvice_response.json())
 #rturns dump: { "genus": "Citrullus", "name": "Watermelon", "id": 25, "family": "Cucurbitaceae", "order": "Cucurbitales", "nutritions": { "carbohydrates": 8, "protein": 0.6, "fat": 0.2, "calories": 30, "sugar": 6 } }
 
 
@@ -47,3 +47,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # dumps the variable
 streamlit.dataframe(fruityvice_normalized)
 
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/kiwi")
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# dumps the variable
+streamlit.dataframe(fruityvice_normalized)

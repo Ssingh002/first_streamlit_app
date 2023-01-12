@@ -42,7 +42,7 @@ import requests
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi") 
 # kiwi above is hardcoded to the website addresss
-#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice) 
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice) 
 # the above allows fruit choice to be added on the fly
 
 #The following dumps the information of the Watermelon in a straighline

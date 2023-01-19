@@ -3,7 +3,7 @@ import requests
 #imports results into variable
 
 #Pandas is another pacakage library. File below is picked from our s3 bucket
-#import pandas
+import pandas
 
 import snowflake.connector
 from urllib.error import URLError

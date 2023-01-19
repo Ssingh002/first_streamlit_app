@@ -1,5 +1,5 @@
-#import streamlit
-#import requests
+import streamlit
+import requests
 #imports results into variable
 
 #Pandas is another pacakage library. File below is picked from our s3 bucket

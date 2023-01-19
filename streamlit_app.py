@@ -1,4 +1,14 @@
-import streamlit
+#import streamlit
+#import requests
+#imports results into variable
+
+#Pandas is another pacakage library. File below is picked from our s3 bucket
+#import pandas
+
+import snowflake.connector
+from urllib.error import URLError
+
+
 streamlit.title('My Parents New Healthy Diner')
 
 streamlit.header ('Breakfast Menu')
@@ -9,8 +19,6 @@ streamlit.text ('🥑🍞Hard-Boiled Free-Range Egg')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
   
-#Pandas is another pacakage library. File below is picked from our s3 bucket
-import pandas
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 #my_fruite_list is called a dataframe
 my_fruit_list = my_fruit_list.set_index('Fruit')
@@ -37,8 +45,6 @@ streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
-import requests
-#imports results into variable
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi") 
 # kiwi above is hardcoded to the website addresss
@@ -52,11 +58,14 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 
 # Normalizes the above data in columns and values
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+
 # dumps the variable
 streamlit.dataframe(fruityvice_normalized)
 
+#don't run anything past here while we troubleshoot
+streamlit.stop()
+
 #Lesson 12. Created new requirements.txt
-import snowflake.connector
 # query trail a/c metadata
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()

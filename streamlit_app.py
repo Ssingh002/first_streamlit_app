@@ -65,7 +65,7 @@ my_data_row = my_cur.fetchone()
 # above fetches one using cursor
 streamlit.header ("The fruit load list contains:")
 streamlit.text(my_data_row)
-streamlit.dataframe(my_data_row)
+streamlit.dataframe(my_data_row) #would put the data into normalized format - column/row
 
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()

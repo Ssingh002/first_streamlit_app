@@ -40,7 +40,20 @@ streamlit.dataframe(fruits_to_show)
 
 #Lesson 9
 streamlit.header("Fruityvice Fruit Advice!")  
-
+# As per Lession 12 - Try/Except chapter
+try:
+  fruit_choice = streamlit.text_input('What fruit would you like information about?')
+  
+  if not fuit_choice:
+    streamlit.error ("Please select a fruit to get information.")
+  else:
+    fruityvice_response = reqeusts.get ("https://fruityvice.com/api/fruit/" + fruit_choice)
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    streamlit.dataframe(fruityvice_normalized)
+ 
+except URLError as e:
+    streamlit.error()
+    
 #New section to display fruitvice api response
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
@@ -48,7 +61,7 @@ streamlit.write('The user entered ', fruit_choice)
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi") 
 # kiwi above is hardcoded to the website addresss
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice) 
+#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice) 
 # the above allows fruit choice to be added on the fly
 
 #The following dumps the information of the Watermelon in a straighline
@@ -57,10 +70,10 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 
 
 # Normalizes the above data in columns and values
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 
 # dumps the variable
-streamlit.dataframe(fruityvice_normalized)
+#streamlit.dataframe(fruityvice_normalized)
 
 #don't run anything past here while we troubleshoot
 streamlit.stop()

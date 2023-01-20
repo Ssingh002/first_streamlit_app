@@ -104,10 +104,10 @@ if streamlit.button('Get Fruit Load list'):
 
 #would put all the data into normalized format - column/row
 
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_data_row = my_cur.fetchone()
-streamlit.text("Hello from Snowflake:")
-streamlit.text(my_data_row)
+#my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+#my_data_row = my_cur.fetchone()
+#streamlit.text("Hello from Snowflake:")
+#streamlit.text(my_data_row)
 
 #L12: Use a Function and Button to ADd the Fruit Name Submissions
 #New section to display fruitvice api response

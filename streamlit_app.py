@@ -103,7 +103,9 @@ if streamlit.button('Get Fruit Load list'):
 #my_data_row = my_cur.fetchone() # above fetches one using cursor
  my_data_rows = get_fruit_load_list()
 #streamlit.text(my_data_row)
-streamlit.dataframe(my_data_rows) #would put all the data into normalized format - column/row
+streamlit.dataframe(my_data_rows) 
+
+#would put all the data into normalized format - column/row
 
 
 

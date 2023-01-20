@@ -83,7 +83,7 @@ except URLError as e:
 #streamlit.dataframe(fruityvice_normalized)
 
 #don't run anything past here while we troubleshoot
-streamlit.stop()
+#streamlit.stop()
 
 #Lesson 12. Created new requirements.txt
 # query trail a/c metadata
@@ -107,6 +107,9 @@ streamlit.dataframe(my_data_row) #would put the data into normalized format - co
 
 
 streamlit.dataframe(my_data_rows) #dumps all the rows as per variable 
+
+streamlit.stop()
+
 
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()

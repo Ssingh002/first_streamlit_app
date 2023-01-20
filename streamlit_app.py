@@ -111,13 +111,13 @@ if streamlit.button('Get Fruit Load list'):
 
 #L12: Use a Function and Button to ADd the Fruit Name Submissions
 #New section to display fruitvice api response
+
 #Allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
-      my_cur.execute("select * from fruit_Load_list")
+     my_cur.execute("insert into fruit_Load_list values ('from streamlit')")
     return "Thanks for adding "
 
-     # my_cur.execute("insert into fruit_Load_list values ('from streamlit')")
 
     
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
